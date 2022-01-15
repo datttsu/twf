@@ -1,0 +1,800 @@
+@charset "UTF-8";
+/*=========================================
+# mixin
+=========================================*/
+/*このように @media screen and (width: 767px) { } を書かなくても、
+PC用のcssを書きながらスマホ用の表示を書き足すことができます！ */
+/*=========================================
+# color
+=========================================*/
+/*=========================================
+# common
+=========================================*/
+@media screen and (min-width: 768px) {
+  .is-sp {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .is-md {
+    display: none;
+  }
+}
+
+body {
+  font-size: 16px;
+  color: #333;
+  font-family: "ヒラギノ明朝, ProN", serif;
+  line-height: 1.6785;
+}
+
+img {
+  width: 100%;
+}
+
+.inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+@media screen and (max-width: 767px) {
+  .inner {
+    padding: 0 15px;
+  }
+}
+
+.section {
+  margin-top: 160px;
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    margin-top: 96px;
+  }
+}
+
+/* util
+=================================================*/
+.util-link {
+  font-size: 14px;
+  letter-spacing: .1em;
+  color: #000;
+  border: solid 1px #000;
+  background: #fff;
+  display: inline-block;
+  padding: 10px 54px;
+  -webkit-transition: background-color .4s,color .4s;
+  transition: background-color .4s,color .4s;
+}
+
+.util-link.-active {
+  background: #000;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .util-link:not(.-submit):hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+/*========= 背景動画設定のCSS ===============*/
+#main {
+  position: relative;
+  /*h1の中央寄せ配置の起点とするためのrelative*/
+  height: 100vh;
+  /*高さを全画面にあわせる*/
+}
+
+#video-area {
+  position: fixed;
+  z-index: -1;
+  /*最背面に設定*/
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#video {
+  /*天地中央配置*/
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /*縦横幅指定*/
+  width: 177.77777778vh;
+  /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+  height: 56.25vw;
+  /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/*見出し設定*/
+h1 {
+  /*要素の配置*/
+  position: absolute;
+  /*要素を天地中央寄せ*/
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  /*見た目の調整*/
+  color: #fff;
+  text-shadow: 0 0 15px #666;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    /*要素の配置*/
+    position: absolute;
+    /*要素を天地中央寄せ*/
+    top: 80%;
+    left: 40%;
+    font-size: 35px;
+  }
+}
+
+/*========= レイアウトのためのCSS ===============*/
+#container {
+  background: #F9F2E8;
+  padding: 50px 0 22px 0;
+  text-align: center;
+}
+
+/* header
+=================================================*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #F9F2E8;
+}
+
+.drawer--right .header .drawer-hamburger {
+  right: 3px;
+}
+
+.header .drawer-hamburger-icon {
+  background: #000;
+}
+
+.drawer-open .header .drawer-hamburger-icon {
+  background: transparent;
+}
+
+.header .drawer-hamburger-icon::before, .header .drawer-hamburger-icon::after {
+  background: #000;
+}
+
+.header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .header-inner {
+    height: 60px;
+  }
+}
+
+.header-nav {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .header-nav {
+    top: 60px;
+    background-color: #665656;
+    padding: 24px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-nav-item + .header-nav-item {
+    margin-left: 46px;
+  }
+}
+
+.header-nav-item-link {
+  display: block;
+  color: #333;
+  height: 70px;
+  line-height: 70px;
+  letter-spacing: .1em;
+}
+
+@media screen and (max-width: 767px) {
+  .header-nav-item-link {
+    color: #fff;
+    font-size: 18px;
+    text-align: right;
+    padding: 0 15px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-nav-item-link {
+    -webkit-transition: -webkit-transform .4s;
+    transition: -webkit-transform .4s;
+    transition: transform .4s;
+    transition: transform .4s, -webkit-transform .4s;
+  }
+  .header-nav-item-link:hover {
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+  }
+}
+
+.gnavi li a {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.gnavi li a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  top: 80%;
+  right: 6%;
+  /*線の形状*/
+  width: 31%;
+  height: 1px;
+  background: #F9F2E8;
+  /*アニメーションの指定*/
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  /*X方向0、Y方向1*/
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  /*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  /*X方向にスケール拡大*/
+}
+
+/* concept
+=================================================*/
+.concept-inner {
+  margin: 64px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .concept-inner {
+    margin: 32px 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .concept-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .concept-picture {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45%;
+            flex: 0 0 45%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .concept-message {
+    margin-top: 36px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .concept-message {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    margin-left: 6.6667%;
+    background: #fff;
+    margin-top: 80px;
+    padding: 10px 0;
+  }
+}
+
+.concept-message-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.concept-message-text {
+  margin-top: 36px;
+}
+
+@media screen and (max-width: 767px) {
+  .concept-message-text {
+    margin-top: 20px;
+  }
+}
+
+.concept-inner2 {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  /* 横並び逆順 */
+}
+
+.concept-message2 {
+  margin-right: 6.6667%;
+  margin-left: 0;
+}
+
+/* multi-images
+=================================================*/
+.multi-article {
+  margin-top: 150px;
+}
+
+@media screen and (max-width: 767px) {
+  .multi-article {
+    margin-top: 50px;
+  }
+}
+
+.multi-article-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .multi-article-images {
+    display: inline-block;
+  }
+}
+
+.multi-article-image {
+  position: relative;
+  opacity: .8;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.multi-article-image:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .multi-article-image {
+    width: 214.67%;
+  }
+}
+
+.multi-article-image a img {
+  height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 767px) {
+  .multi-article-image a img {
+    width: 375px;
+    height: 200px;
+  }
+}
+
+.article-text {
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .article-text {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    margin: 25px;
+  }
+  .article-text p {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+  }
+  .article-text h2 {
+    margin-top: 20px;
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .article-text {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    margin: 12px;
+  }
+  .article-text p {
+    margin-top: 10px;
+    font-size: .5rem;
+    font-weight: 250;
+    text-align: left;
+  }
+  .article-text h2 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+}
+
+.module_layer-text {
+  padding: 50px;
+  display: inline-block;
+  text-align: left;
+}
+
+.module--stories h4 {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  line-height: 1.75em;
+  color: #888;
+  font-weight: 400;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .module--stories h4 {
+    margin-bottom: 40px;
+  }
+}
+
+.module--stories h3 {
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (min-width: 768px) {
+  .module--stories h3 {
+    font-size: 33px;
+    line-height: 63px;
+    margin-bottom: 40px;
+  }
+}
+
+.module--stories p {
+  color: #888;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .module--stories p {
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+}
+
+.module--stories a {
+  color: #000;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .module--stories a {
+    font-size: 13px;
+  }
+}
+
+.last-module {
+  background-color: #fff;
+  margin-top: 160px;
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .last-module {
+    margin-top: 80px;
+  }
+}
+
+/* news
+=================================================*/
+.news {
+  max-width: 1100px;
+}
+
+@media screen and (max-width: 767px) {
+  .news {
+    padding: 0 32px;
+  }
+}
+
+.news-list {
+  margin-top: 28px;
+}
+
+@media screen and (max-width: 767px) {
+  .news-list {
+    margin-top: 25px;
+  }
+}
+
+.news-item {
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.news-item-link {
+  color: #333;
+  padding: 22px 0;
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .news-item-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .news-item-link:hover .news-item-picture > img {
+    -webkit-transform: translate(-50%, -50%) scale(1.05);
+            transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .news-item-header {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 260px;
+            flex: 0 0 260px;
+  }
+}
+
+.news-item-picture {
+  padding-top: 61.5385%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.news-item-picture > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+}
+
+.news-item-body {
+  word-break: break-all;
+}
+
+@media screen and (max-width: 767px) {
+  .news-item-body {
+    margin-top: 21px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .news-item-body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-left: 40px;
+  }
+}
+
+.news-item-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+@media screen and (max-width: 767px) {
+  .news-item-title {
+    font-size: 16px;
+  }
+}
+
+.news-item-text {
+  color: #888;
+  margin-top: 16px;
+  line-height: 1.7143;
+}
+
+.news-footer {
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 160px;
+}
+
+@media screen and (max-width: 767px) {
+  .news-footer {
+    margin-bottom: 80px;
+  }
+}
+
+/* footer
+=================================================*/
+.footer {
+  padding: 42px 40px 12px;
+  border-top: 2px solid #000;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 36px 0 14px;
+  }
+}
+
+.footer-logo {
+  width: auto;
+  margin: 0 auto;
+}
+
+.footer-nav-list {
+  margin-top: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer-nav-list {
+    text-align: center;
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav-item {
+    -webkit-transition: -webkit-transform .4s;
+    transition: -webkit-transform .4s;
+    transition: transform .4s;
+    transition: transform .4s, -webkit-transform .4s;
+  }
+  .footer-nav-item:hover {
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav-item + .footer-nav-item {
+    margin-left: 30px;
+  }
+}
+
+.footer-nav-item-link {
+  font-size: 12px;
+  color: #333;
+  display: block;
+  padding: 1em 0;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-nav-item-link {
+    padding: .3em 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav-item-link {
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+  }
+  .footer-nav-item-link:hover {
+    opacity: .7;
+  }
+}
+
+.footer-sns-list {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-sns-list {
+    margin-top: 14px;
+  }
+}
+
+.footer-sns-item {
+  display: inline-block;
+}
+
+.footer-sns-item + .footer-sns-item {
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-sns-item {
+    -webkit-transition: -webkit-transform .4s;
+    transition: -webkit-transform .4s;
+    transition: transform .4s;
+    transition: transform .4s, -webkit-transform .4s;
+  }
+  .footer-sns-item:hover {
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+  }
+}
+
+.footer-sns-item-link {
+  color: #000;
+  font-size: 24px;
+  display: block;
+  padding: .1em .5em;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-sns-item-link {
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+  }
+  .footer-sns-item-link:hover {
+    opacity: .7;
+  }
+}
+
+.footer-copyright {
+  color: #888;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-copyright {
+    margin-top: 5px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
