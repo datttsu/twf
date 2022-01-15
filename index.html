@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"  content="書籍「動くWebデザインアイディア帳」のサンプルサイトです">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dats</title>
+    
+    <link rel="shortcut.icon" href="/favicon.ico">
+    <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/css/6-3-1.css">
+
+    <!--reset.css-->
+    <link rel="stylesheet" href="css/reset.css">
+    <!--mainのやつ-->
+    <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+    <!--スライドのやつ-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <!--font-awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css"
+    media="screen and (max-width:767px)">
+    <!--animate.css-->
+    <link rel="stylesheet" href="css/animate.css">
+    <!--original-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="drawer drawer--right">
+
+    <header id="js-header" class="header">
+        <div class="header-inner inner">
+        <button type="button" class="drawer-toggle drawer-hamburger">
+          <span class="sr-only">toggle navigation</span>
+          <span class="drawer-hamburger-icon"></span>
+        </button>
+        <nav class="drawer-nav header-nav">
+          <ul class="drawer-menu header-nav-list gnavi">
+            <li  class="header-nav-item"><a class="header-nav-item-link" href="#concept">Concept</a></li>
+            <li  class="header-nav-item"><a class="header-nav-item-link" href="#products">Products</a></li>
+            <li  class="header-nav-item"><a class="header-nav-item-link" href="#news">News</a></li>
+          </ul>
+        </nav>
+        </div>
+
+
+      </header>
+      <!--/.header-->
+
+
+      <main id="main">
+        <h1>THE WONDERFUL FANTASTICAL</h1>
+          <div id="video-area">
+        <video id="video" poster="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/img/movie.jpg" webkit-playsinline playsinline muted autoplay loop>
+          <!--
+              poster：動画ファイルが利用できない環境で代替表示される画像
+              webkit-playsinline：iOS 9までのSafari用インライン再生指定
+              playsinline：iOS 10以降のSafari用インライン再生指定
+              muted：音声をミュートさせる
+              autoplay：動画を自動再生させる
+              loop：動画をループさせる
+              controls：コントロールバーを表示する
+          -->
+        <source src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/video/movie.mp4" type="video/mp4">
+        <source src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/video/movie.ogv" type="video/ogv">
+        <source src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/video/movie.webm" type="video/webm">
+        <p>動画を再生できる環境ではありません。</p>
+        </video>
+          <!--/video-area--></div>
+      </main>
+
+      <!--./main-->
+
+
+    <div id="container">
+
+    <section id="concept" class="concept inner section">
+        <div class="concept-inner">
+            <div class="concept-picture wow fadeInUp"><img src="img/mohamadreza-khashai-ziubUDopHmc-unsplash.jpg" alt=""></div>
+           <div class="concept-message wow fadeInUp">
+
+            <div class="module module--stories">
+                <div class="module_layer-text">
+                    <h4>TWF STORIES - THE CLASSICS</h4>
+                    <h3>TWF Classics</h3>
+                    <p>TWF classics are our most popular quilted outwear pieces. Always crafted from 100% recycled Lavenster cloth and always quilted in our signature 2" diamond pattern. </p>
+                    <a href="#">Shop the Classics</a>
+                </div>
+              </div>   
+               <!--/.module -->
+           </div>
+        </div>
+
+      </section>
+      <!-- /.concept1 -->
+
+      <div class="module module--stories wow fadeInUp">
+        <section id="concept" class="concept inner">
+        <div class="module_layer-text">
+            <h4>Factory</h4>
+            <h3>Your order over Christmas</h3>
+            <p>At the Lavenham factory we're taking our annual break from the 24th of December until the 4th of January. As most of our orders are dispatched from our factory, please expect longer dispatch times.</p>
+        </div>
+      </div>
+       <!--/.module -->
+
+       <section id="concept" class="concept inner">
+        <div class="concept-inner concept-inner2">
+            <div class="concept-picture wow fadeInUp"><img src="img/haley-lawrence-6ugQ978v-zg-unsplash.jpg" alt=""></div>
+           <div class="concept-message concept-message2 wow fadeInUp">
+            <div class="module module--stories">
+                <div class="module_layer-text module_layer-text2">
+                    <h4>TWF STORIES - Dats BEING BETTER</h4>
+                    <h3>77 Circa X TWF</h3>
+                    <p>Brought together by a shared mission of 'using up', our latest collaboration with Tokyo based brand 77CIRCA. Available exclsuively on Lavenham.jp.</p>
+                    <a href="#">Read the Story</a>
+                </div>
+              </div>   
+           </div>
+        </div>
+
+      </section>
+      <!-- /.concept2 -->
+
+
+      <section class="multi-article" id="products">
+       <div class="multi-article-images">
+
+        <div class="multi-article-image"><a href=""><img src="good-faces-ZY1kwtoYCg8-unsplash.jpg" alt=""></a>
+        <div class="article-text">
+        <p>POWER PIESE</p>
+        <h2>THE TRENCH COAT</h2>
+        </div>
+        </div>
+
+       <div class="multi-article-image"><a href=""><img src="alireza-dolati-VVlT6icYTc4-unsplash.jpg" alt=""></a>
+        <div class="article-text">
+        <p>AT THE HELM</p>
+        <h2>RICCARDO TISCI</h2>
+       </div>
+       </div>
+
+       <div class="multi-article-image"><a href=""><img src="daniil-onischenko-2QxPQ9P3A1U-unsplash.jpg" alt=""></a>
+        <div class="article-text">
+        <p>MENSWEAR</p>
+        <h2>THE MODERN MAN</h2>
+       </div>
+       </div>
+
+      </section>
+      <!-- /.multi-images -->
+
+      <div class="module module--stories wow fadeInUp">
+        <div class="module_layer-text last-module">
+            <h4>BEING BETTER</h4>
+            <h3>Made to Order</h3>
+            <p>Making exactly what we need reduces waste and helps us all live within the means of the planet. Many of our garments are made to order which may affect dispatch time. Get in touch with our factory customer service team for more information. </p>
+            <a href="#">Shop Classic Quilting</a>
+        </div>
+      </div>
+       <!--/.module -->
+
+
+          <section  id="news" class="news inner section">
+            <div class="news-list">
+
+                <article class="news-item wow fadeInUp">
+                    <a href="" class="news-item-link">
+                        <div class="news-item-header">
+                            <div class="news-item-picture"><img src="img/julia-d--YRrtIfk3KE-unsplash.jpg" alt=""></div>
+                        </div>
+                        <div class="news-item-body">
+                        <p class="news-item-date"><time detetime="2021-05-20">5/20/2021</time></p>
+                        <h3 class="news-item-title">titletitletitletitletitletitletitletitletitle</h3>
+                        <p class="news-item-text">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext..</p>
+                        </div> 
+                    </a>
+                </article>
+
+                <article class="news-item wow fadeInUp">
+                    <a href="" class="news-item-link">
+                        <div class="news-item-header">
+                            <div class="news-item-picture"><img src="img/cat-han-Ks6wd1Zyf1o-unsplash.jpg" alt=""></div>
+                        </div>
+                        <div class="news-item-body">
+                        <p class="news-item-date"><time detetime="2021-05-28">5/28/2021</time></p>
+                        <h3 class="news-item-title">titletitletitletitletitletitletitletitletitle</h3>
+                        <p class="news-item-text">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext..</p>
+                        </div> 
+                    </a>
+                </article>
+
+                <article class="news-item wow fadeInUp">
+                    <a href="" class="news-item-link">
+                        <div class="news-item-header">
+                            <div class="news-item-picture"><img src="img/anderson-w-rangel-HA1SNd9JVig-unsplash.jpg" alt=""></div>
+                        </div>
+                        <div class="news-item-body">
+                        <p class="news-item-date"><time detetime="2021-06-12">6/12/2021</time></p>
+                        <h3 class="news-item-title">titletitletitletitletitletitletitletitletitle</h3>
+                        <p class="news-item-text">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext..</p>
+                        </div> 
+                    </a>
+                </article>
+            </div>
+
+            <div class="news-footer">
+                <a href="#" class="util-link wow fadeInUp">MORE</a>
+            </div>
+
+          </section>
+          <!-- /.news -->
+
+
+          <footer class="footer">
+            <div class="footer-logo">THE WONDERFUL FANTASTICAL</div>
+            <ul class="footer-nav-list">
+    
+              <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-item-link" target="_brank">プライバシーポリシー</a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-item-link">特定商取引法に基づく表記</a>
+              </li>
+    
+            </ul>
+    
+            <ul class="footer-sns-list">
+    
+                <li class="footer-sns-item">
+                    <a href="#" class="footer-sns-item-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+    
+                <li class="footer-sns-item">
+                    <a href="#" class="footer-sns-item-link" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                    </li></a>
+                </li>
+    
+                <li class="footer-sns-item">
+                    <a href="#" class="footer-sns-item-link" aria-label="line"><i class="fab fa-line"></i></a>
+                </li>
+    
+            </ul>
+            <p class="footer-copyright"> &copy; 2020 sobolon All rights reserved</p>
+          </footer>
+          <!-- /.footer -->
+
+         
+
+    <!--/container--></div> 
+    
+   
+         
+
+ <!-- jquery & iScroll -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+ <!-- slick -->
+ <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+ <!-- drawer.js -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+ <!--wow.min.js-->
+ <script src="js/wow.min.js"></script>
+ <!--original-->
+ <script src="js/script.js"></script>
+
+</body>
+</html>
+
+
